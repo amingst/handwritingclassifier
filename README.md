@@ -5,6 +5,7 @@ To run this you need to have a 64bit version of python installed and at least ja
 
 # Python Modules Required
 pip install pillow
+
 pip install --upgrade tensorflow
 
 Before running you need to edit paths in the following files:
