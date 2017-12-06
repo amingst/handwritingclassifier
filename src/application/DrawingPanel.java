@@ -15,7 +15,7 @@ public class DrawingPanel extends JComponent {
     private Graphics2D graphics2D;
     private BufferedImage image;
     private int posX, posY, prevPosX, prevPosY;
-    String imgPath = "c:\\Users\\Andrew\\desktop\\handwritingclassifier\\NeuralNet\\images\\image.PNG";
+	String imgPath = "c:\\Users\\Andrew\\documents\\github\\handwritingclassifier\\NeuralNet\\images\\image.PNG";
 
     public DrawingPanel() {
         setDoubleBuffered(false);

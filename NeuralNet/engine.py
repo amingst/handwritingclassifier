@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
 import sys
 import tensorflow as tf
 from PIL import Image, ImageFilter
@@ -48,7 +51,7 @@ def deepNet(imvalue):
     
     y_conv=tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)
     
-    init_op = tf.initialize_all_variables()
+    init_op = tf.global_variables_initializer()
     saver = tf.train.Saver()
 
     with tf.Session() as sess:
@@ -89,6 +92,7 @@ def imageprepare(argv):
 def main(argv):
     imvalue = imageprepare(argv)
     deepLayer = deepNet(imvalue)
+    print ('Prediction: ')
     print (deepLayer[0])
     #file = open("text.txt", "w")
     #file.write(str(deepLayer[0]))

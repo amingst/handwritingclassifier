@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
@@ -66,7 +69,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 
 saver = tf.train.Saver()
-sess.run(tf.initialize_all_variables())
+sess.run(tf.global_variables_initializer())
 #with tf.Session() as sess:
     #sess.run(init_op)
 for i in range(100):
@@ -77,7 +80,8 @@ for i in range(100):
     print("step %d, training accuracy %g"%(i, train_accuracy))
   train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
 
-save_path = saver.save(sess, "C:\\Users\\Andrew\\Desktop\\handwritingclassifier\\model2.ckpt")
+#save_path = saver.save(sess, "C:\\Users\\Andrew\\Desktop\\handwritingclassifier\\model2.ckpt")
+save_path = saver.save(sess, "C:\\Users\\Andrew\\Documents\\github\\handwritingclassifier\\model2.ckpt")
 print ("Model saved in file: ", save_path)
 
 print("test accuracy %g"%accuracy.eval(feed_dict={

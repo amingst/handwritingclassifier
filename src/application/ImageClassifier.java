@@ -9,7 +9,7 @@ public class ImageClassifier {
 
     public static void runImageClassifier() {
         ProcessBuilder processBuilder = new ProcessBuilder("cmd", "/c", "test.bat");
-        File dir = new File("C:\\Users\\Andrew\\desktop\\handwritingclassifier\\NeuralNet");
+        File dir = new File("c:\\Users\\Andrew\\documents\\github\\handwritingclassifier\\NeuralNet");
         processBuilder.directory(dir);
         try {
             Process p = processBuilder.start();
